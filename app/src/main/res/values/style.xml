@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="Cut" parent="ShapeAppearance.MaterialComponents.MediumComponent">
+        <item name="cornerFamily">cut</item>
+        <item name="cornerSize">12dp</item>
+    </style>
+
+    <style name="Rounded" parent="ShapeAppearance.MaterialComponents.SmallComponent">
+        <item name="cornerFamily">rounded</item>
+        <item name="cornerSize">16dp</item>
+    </style>
+
+    <style name="TextInputLayoutStyle" parent="Widget.MaterialComponents.TextInputLayout.OutlinedBox">
+        <item name="backgroundTint">#FFFFFF</item>
+        <item name="boxStrokeColor">#000000</item> <!-- color de la línea cuando no está seleccionado -->
+        <item name="boxStrokeErrorColor">#FF0000</item> <!-- color de la línea cuando hay un error -->
+        <item name="boxStrokeWidth">2dp</item> <!-- ancho de la línea -->
+        <item name="boxBackgroundColor">#FFFFFF</item> <!-- color de fondo -->
+        <item name="boxCornerRadiusTopStart">20dp</item>
+        <item name="boxCornerRadiusTopEnd">20dp</item>
+        <item name="boxCornerRadiusBottomEnd">20dp</item>
+        <item name="boxCornerRadiusBottomStart">20dp</item>
+        <item name="colorAccent">#0097A7</item> <!-- color de la línea cuando está seleccionado -->
+    </style>
+</resources>

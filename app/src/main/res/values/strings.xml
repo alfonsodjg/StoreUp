@@ -1,0 +1,18 @@
+<resources>
+    <string name="app_name">StoreUp</string>
+
+    <!--Referencias de activity Main-->
+    <string name="edtMailSingIn">Email</string>
+    <string name="edtPasswordSingIn">Password</string>
+    <string name="forgotPasswordSingIn">Forgot password?</string>
+    <string name="btnSingIn">Sing In</string>
+    <string name="tvCreateAccountSingIn">Create an account</string>
+
+    <!--Referencias de fragment createAccount-->
+    <string name="btncreateAccount">Create account</string>
+    <string name="edtMailCreateAccount">Enter your mail</string>
+    <string name="edtPasswordCreateAccount">Enter your password</string>
+    <string name="tvMailCreateAccount">Email</string>
+    <string name="tvPasswordCreateAccount">Password</string>
+    <string name="tvRegisterAccount">Register account</string>
+</resources>
