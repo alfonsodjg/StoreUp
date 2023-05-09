@@ -1,7 +1,7 @@
 package com.app.storeup.model
 
 data class RegisterUser(
-    var idUser:Int,
-    var name:String,
+    var id:Int,
+    var email:String,
     var password:String
 )

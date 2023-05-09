@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
@@ -57,13 +58,34 @@ class FragmentCreateAccount : Fragment(){
 
         viewModel.operationSuccesful.observe(viewLifecycleOwner){
             if(it){
-
+                binding.edtMailCreateAccount.setText("")
+                binding.edtPassCreateAccount.setText("")
+                Toast.makeText(context,"Usuario registrado",Toast.LENGTH_SHORT).show()
             }else{
                 binding.edtMailCreateAccount.error="Enter your mail"
                 binding.edtPassCreateAccount.error="Enter your pass"
             }
         }
+        val animation=AnimationUtils.loadAnimation(context,R.anim.anim_fragment_up)
+        binding.cvCreateAccount.startAnimation(animation)
         return binding.root
+    }
+    override fun onResume() {
+        super.onResume()
+        // deshabilitar elementos de la actividad
+        requireActivity().findViewById<View>(R.id.btnSingIn).isEnabled = false
+        requireActivity().findViewById<View>(R.id.edtEmail).isEnabled = false
+        requireActivity().findViewById<View>(R.id.edtPassword).isEnabled=false
+        requireActivity().findViewById<View>(R.id.tvForgotPassword).isEnabled=false
+    }
+
+    override fun onPause() {
+        super.onPause()
+        // habilitar elementos de la actividad
+        requireActivity().findViewById<View>(R.id.btnSingIn).isEnabled = true
+        requireActivity().findViewById<View>(R.id.edtEmail).isEnabled = true
+        requireActivity().findViewById<View>(R.id.edtPassword).isEnabled=true
+        requireActivity().findViewById<View>(R.id.tvForgotPassword).isEnabled=true
     }
 
     companion object {
