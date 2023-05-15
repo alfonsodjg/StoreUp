@@ -19,6 +19,7 @@
             android:id="@+id/fragment_container"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
+            android:background="@drawable/fondo_login_main"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -27,6 +28,17 @@
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 >
+                <ImageView
+                    android:id="@+id/imV2"
+                    android:layout_width="75dp"
+                    android:layout_height="61dp"
+                    android:src="@drawable/circle"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.382"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.087" />
 
                 <ImageView
                     android:id="@+id/cvLogin"
@@ -41,18 +53,19 @@
                     app:layout_constraintVertical_bias="0.0" />
 
                 <ImageView
-                    android:id="@+id/imV2"
-                    android:layout_width="75dp"
-                    android:layout_height="61dp"
-                    android:src="@drawable/circle"
+                    android:id="@+id/imVSingInAdmi"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/arrow_sing_admi"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.382"
+                    app:layout_constraintHorizontal_bias="0.96"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.087" />
+                    app:layout_constraintVertical_bias="0.01" />
 
                 <ImageView
+                    android:id="@+id/imageView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:src="@drawable/star"
@@ -62,17 +75,6 @@
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:layout_constraintVertical_bias="0.19" />
-
-                <ImageView
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:src="@drawable/flower"
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.0"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.29" />
 
                 <ImageView
                     android:layout_width="wrap_content"
@@ -110,13 +112,25 @@
                 <LinearLayout
                     android:id="@+id/linerLogin"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content"
+                    android:layout_height="match_parent"
                     android:layout_gravity="center"
+                    android:layout_marginTop="220dp"
                     android:orientation="vertical"
+                    android:background="@drawable/background_cardview_operador"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent">
+
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="Login"
+                        android:textColor="@color/black"
+                        android:textSize="25sp"
+                        android:textStyle="bold"
+                        android:gravity="center"
+                        android:layout_marginTop="10dp"/>
 
                     <com.google.android.material.textfield.TextInputLayout
                         android:id="@+id/edtMailTextLayoutSingIn"
@@ -125,12 +139,8 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
                         android:layout_marginEnd="30dp"
+                        android:layout_marginTop="70dp"
                         android:hint="@string/edtMailSingIn"
-                        app:layout_constraintBottom_toBottomOf="parent"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintVertical_bias="0.38"
                         app:shapeAppearance="@style/Rounded">
 
                         <com.google.android.material.textfield.TextInputEditText
@@ -146,7 +156,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="30dp"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:layout_marginEnd="30dp"
                         android:hint="@string/edtPasswordSingIn"
                         app:shapeAppearance="@style/Rounded">
@@ -155,6 +165,7 @@
                             android:id="@+id/edtPassword"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"
+                            android:inputType="textPassword"
                             android:text="@={model.passSingIn}" />
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -162,7 +173,7 @@
                         android:id="@+id/tvForgotPassword"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:autoSizeMaxTextSize="30dp"
                         android:autoSizeMinTextSize="12dp"
                         android:autoSizeTextType="uniform"
@@ -178,18 +189,18 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginStart="100dp"
-                        android:layout_marginTop="10dp"
-                        android:background="@drawable/background_login2"
+                        android:layout_marginTop="20dp"
                         android:layout_marginEnd="100dp"
-                        android:textColor="@color/black"
+                        android:background="@drawable/background_btn_login_operador"
                         android:onClick="@{()->model.singIn()}"
-                        android:text="@string/btnSingIn" />
+                        android:text="@string/btnSingIn"
+                        android:textColor="@color/white" />
 
                     <TextView
                         android:id="@+id/tvCreateAccount"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="10dp"
+                        android:layout_marginTop="20dp"
                         android:autoSizeMaxTextSize="30dp"
                         android:autoSizeMinTextSize="12dp"
                         android:autoSizeTextType="uniform"

@@ -3,9 +3,12 @@ package com.app.storeup
 
 import android.annotation.SuppressLint
 import android.content.Intent
+import android.graphics.Color
+import android.graphics.drawable.Drawable
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import android.view.WindowManager
 import android.view.animation.AnimationUtils
 import android.widget.Toast
 import androidx.lifecycle.Observer
@@ -20,7 +23,7 @@ class LoginActivity : AppCompatActivity() {
     private lateinit var binding: LoginMainBinding
     private var createAccountFragment:FragmentCreateAccount?=null
     private lateinit var viewModel: MainActivityViewModel
-    @SuppressLint("ResourceType")
+    @SuppressLint("ResourceType", "UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= LoginMainBinding.inflate(layoutInflater)
@@ -60,8 +63,23 @@ class LoginActivity : AppCompatActivity() {
         binding.btnSingIn.setOnClickListener {
             Toast.makeText(this,"Sing in...", Toast.LENGTH_SHORT).show()
         }
-    }
+        binding.imVSingInAdmi.setOnClickListener {
+            singInAdmi()
+        }
 
+        // Cambia el color degradado en el status bar
+        window.addFlags(WindowManager.LayoutParams.FLAG_DRAWS_SYSTEM_BAR_BACKGROUNDS)
+        window.statusBarColor = Color.TRANSPARENT
+        @SuppressLint("UseCompatLoadingForDrawables")
+        val background: Drawable? = resources.getDrawable(R.drawable.fondo_login_main)
+        window.setBackgroundDrawable(background)
+
+    }//Fin del oncrete
+    private fun singInAdmi(){
+        val i=Intent(this,LoginAdmiActivity::class.java)
+        startActivity(i)
+        finish()
+    }
     override fun onResume() {
         super.onResume()
         // Deshabilitar elementos de la actividad
