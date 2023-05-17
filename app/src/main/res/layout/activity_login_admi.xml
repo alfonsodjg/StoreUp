@@ -50,9 +50,9 @@
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:text="@string/tvWelcomeAdmi"
-                        android:textSize="28sp"
+                        android:textSize="22sp"
                         android:textStyle="bold"
-                        android:layout_gravity="center_vertical"
+                        android:layout_marginTop="110dp"
                         android:gravity="center"
                         android:textColor="@color/white"/>
                 </LinearLayout>
@@ -87,6 +87,7 @@
 
                         <com.google.android.material.textfield.TextInputEditText
                             android:id="@+id/edtEmail"
+                            android:maxLines="1"
                             android:layout_width="match_parent"
                             android:layout_height="wrap_content"/>
                     </com.google.android.material.textfield.TextInputLayout>
@@ -104,6 +105,7 @@
                             android:id="@+id/edtPassword"
                             android:layout_width="match_parent"
                             android:inputType="textPassword"
+                            android:maxLines="1"
                             android:layout_height="wrap_content"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
@@ -135,7 +137,7 @@
                         android:text="@string/btnSingIn" />
 
                     <TextView
-                        android:id="@+id/tvCreateAccount"
+                        android:id="@+id/tvCreateAccountAdmi"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="20dp"

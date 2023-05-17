@@ -20,5 +20,9 @@
 
     <!--Referencias itemCategorias-->
     <string name="itemCategoria">Categoria</string>
+    <!--Referencias createAccountAdmiActivity-->
     <string name="tvWelcomeAdmi">Welcome as administrator!!</string>
+    <string name="tvWelcomeAdmiCreateAccount">Register account as administrator</string>
+    <string name="edtNameAdmi">Name</string>
+    <string name="btnRegisterAcoount">Register account</string>
 </resources>

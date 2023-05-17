@@ -8,6 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.WindowManager
 import com.app.storeup.databinding.ActivityLoginAdmiBinding
+import com.app.storeup.views.RegisterAccountAdmiActivity
 
 class LoginAdmiActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginAdmiBinding
@@ -24,11 +25,18 @@ class LoginAdmiActivity : AppCompatActivity() {
         val background: Drawable? = resources.getDrawable(R.drawable.statusbar_admi)
         window.setBackgroundDrawable(background)
 
-        binding.btnBack.setOnClickListener {
-            val i=Intent(this,LoginActivity::class.java)
-            startActivity(i)
-            finish()
-        }
+        binding.btnBack.setOnClickListener {back()}
+        binding.tvCreateAccountAdmi.setOnClickListener { createAccount() }
+    }
+    private fun back(){
+        val i=Intent(this,LoginActivity::class.java)
+        startActivity(i)
+        finish()
+    }
+    private fun createAccount(){
+        val i=Intent(this,RegisterAccountAdmiActivity::class.java)
+        startActivity(i)
+        finish()
     }
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
