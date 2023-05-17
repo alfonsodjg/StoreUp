@@ -36,6 +36,8 @@ class FragmentCreateAccountViewModel:ViewModel() {
                     println("Code: ${response.code()}")
                     if(response.isSuccessful){
                         operationSuccesful.value=true
+
+
                     }
                 }
             }catch (e:Exception){
