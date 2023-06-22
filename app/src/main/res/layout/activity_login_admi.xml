@@ -4,7 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
+        <variable
+            name="model"
+            type="com.app.storeup.viewmodels.LoginAdmiViewModel" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -89,7 +91,8 @@
                             android:id="@+id/edtEmail"
                             android:maxLines="1"
                             android:layout_width="match_parent"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:text="@={model.email}"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <com.google.android.material.textfield.TextInputLayout
@@ -106,7 +109,8 @@
                             android:layout_width="match_parent"
                             android:inputType="textPassword"
                             android:maxLines="1"
-                            android:layout_height="wrap_content"/>
+                            android:layout_height="wrap_content"
+                            android:text="@={model.password}"/>
                     </com.google.android.material.textfield.TextInputLayout>
 
                     <TextView
@@ -132,9 +136,11 @@
                         android:layout_marginEnd="40dp"
                         android:layout_gravity="center"
                         android:layout_marginTop="20dp"
+                        android:onClick="@{()->model.singIng()}"
                         android:background="@drawable/background_btn_login_admi"
                         android:textColor="@color/black"
-                        android:text="@string/btnSingIn" />
+                        android:text="@string/btnSingIn"
+                        />
 
                     <TextView
                         android:id="@+id/tvCreateAccountAdmi"

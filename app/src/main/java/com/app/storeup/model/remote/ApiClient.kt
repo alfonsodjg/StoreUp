@@ -12,7 +12,7 @@ object ApiClient {
             .create()
 
         val retrofit = Retrofit.Builder()
-            .baseUrl("http://192.168.1.67:8095/")
+            .baseUrl("http://192.168.1.73:8095/")
             .addConverterFactory(GsonConverterFactory.create(gson))
             .build()
 

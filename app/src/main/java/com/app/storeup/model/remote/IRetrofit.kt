@@ -1,13 +1,17 @@
 package com.app.storeup.model.remote
 
 import com.app.storeup.model.RegisterUser
+import com.app.storeup.model.entitys.CategoriasModel
+import com.app.storeup.model.entitys.DatesCategoriasModel
 import com.app.storeup.model.entitys.LoginAuth
+import com.app.storeup.model.entitys.LoginAuthAdmi
 import com.app.storeup.model.entitys.RegisterUserAdmi
 import retrofit2.Call
 import retrofit2.Response
 import retrofit2.http.Body
 import retrofit2.http.Field
 import retrofit2.http.FormUrlEncoded
+import retrofit2.http.GET
 import retrofit2.http.POST
 
 interface IRetrofit {
@@ -22,4 +26,17 @@ interface IRetrofit {
     //Registrar administrador
     @POST("api/inserUser/admi")
     suspend fun insertAdmi(@Body admi:RegisterUserAdmi):Response<Void>
+
+    //-----------------Metodod administrador------------
+    //Login Administrador
+    @POST("api/loginAdmi")
+    suspend fun loginAdmi(@Body credentials:LoginAuthAdmi):Response<LoginAuthAdmi>
+
+    //Lista de tipos de categoria
+    @GET("api/getAllTipoCategorias")
+    suspend fun getCategorias():Response<List<CategoriasModel>>
+
+    //Metodo para registrar datos de categoria
+    @POST("api/insert/dates/categoria")
+    suspend fun insertDatesCategoria(@Body datos:DatesCategoriasModel):Response<Void>
 }
