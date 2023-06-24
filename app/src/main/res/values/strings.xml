@@ -33,6 +33,20 @@
     <string name="nav_header_desc">Navigation header</string>
     <string name="action_settings">Settings</string>
 
+    <!--Referencias home admi-->
+    <string name="tvNombe">Register name</string>
+    <string name="edtNombre">enter name</string>
+    <string name="tvHorario">Register time</string>
+    <string name="edtHorario">enter time</string>
+    <string name="tvPromocion">Register promotion</string>
+    <string name="edtPromocion">enter promotions</string>
+    <string name="tvUbicacion">Register location</string>
+    <string name="tvTypeStoye">Register type store</string>
+    <string name="edtUbicacion">enter location link</string>
+    <string name="tvProductos">Register products</string>
+    <string name="edtProducts">enter your products</string>
+    <string name="btnRegisterDates">Register datas</string>
+
     <string name="menu_home">Home</string>
     <string name="menu_gallery">Gallery</string>
     <string name="menu_slideshow">Slideshow</string>
