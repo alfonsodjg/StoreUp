@@ -1,5 +1,7 @@
 package com.app.storeup.views
 
+import android.graphics.Color
+import android.graphics.drawable.ColorDrawable
 import android.os.Bundle
 import android.view.Menu
 import com.google.android.material.snackbar.Snackbar
@@ -26,6 +28,7 @@ class HomeAdmiActivity2 : AppCompatActivity() {
         setContentView(binding.root)
 
         setSupportActionBar(binding.appBarHomeAdmi2.toolbar)
+        supportActionBar?.setBackgroundDrawable(ColorDrawable(Color.parseColor("#07DBFF"))) //Color de action bar
 
         val drawerLayout: DrawerLayout = binding.drawerLayout
         val navView: NavigationView = binding.navView
