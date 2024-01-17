@@ -13,9 +13,9 @@
 
     <fragment
         android:id="@+id/nav_gallery"
-        android:name="com.app.storeup.views.ui.gallery.GalleryFragment"
+        android:name="com.app.storeup.views.ui.about.AboutFragment"
         android:label="@string/menu_gallery"
-        tools:layout="@layout/fragment_gallery" />
+        tools:layout="@layout/fragment_about" />
 
     <fragment
         android:id="@+id/nav_slideshow"

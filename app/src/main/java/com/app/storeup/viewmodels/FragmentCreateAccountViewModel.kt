@@ -4,16 +4,12 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.app.storeup.model.RegisterUser
+import com.app.storeup.model.entitys.RegisterUser
 import com.app.storeup.model.remote.ApiClient
 import com.app.storeup.model.remote.IRetrofit
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
 import kotlinx.coroutines.withContext
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.create
 
 class FragmentCreateAccountViewModel:ViewModel() {
     private val _removeFragmentEvent = MutableLiveData<Unit>()
@@ -25,7 +21,7 @@ class FragmentCreateAccountViewModel:ViewModel() {
 
     fun registerUser(){
         if(validation()){
-            val user=RegisterUser(0,edtMail.value!!,edtPass.value!!)
+            val user= RegisterUser(0,edtMail.value!!,edtPass.value!!)
             try {
                 viewModelScope.launch {
                     val retrofit=ApiClient.getInstance()

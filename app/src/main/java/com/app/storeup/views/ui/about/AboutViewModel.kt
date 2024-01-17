@@ -1,13 +1,13 @@
-package com.app.storeup.views.ui.gallery
+package com.app.storeup.views.ui.about
 
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 
-class GalleryViewModel : ViewModel() {
+class AboutViewModel : ViewModel() {
 
     private val _text = MutableLiveData<String>().apply {
-        value = "This is gallery Fragment"
+        value = "Elizabeth Ferrer Paez\nInstituto Tecnologico Superior de Zongolica"
     }
     val text: LiveData<String> = _text
 }

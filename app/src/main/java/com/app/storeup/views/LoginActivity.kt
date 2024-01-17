@@ -1,4 +1,4 @@
-package com.app.storeup
+package com.app.storeup.views
 
 
 import android.annotation.SuppressLint
@@ -14,15 +14,15 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
+import com.app.storeup.R
 import com.app.storeup.databinding.LoginMainBinding
 import com.app.storeup.viewmodels.MainActivityViewModel
-import com.app.storeup.views.FragmentCreateAccount
-import com.app.storeup.views.HomeActivity
 
 class LoginActivity : AppCompatActivity() {
     private lateinit var binding: LoginMainBinding
     private var createAccountFragment:FragmentCreateAccount?=null
     private lateinit var viewModel: MainActivityViewModel
+
     @SuppressLint("ResourceType", "UseCompatLoadingForDrawables")
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -46,11 +46,11 @@ class LoginActivity : AppCompatActivity() {
             }
         })
 
-        val animationLiner=AnimationUtils.loadAnimation(this,R.anim.anim_fragment_up)
+        val animationLiner=AnimationUtils.loadAnimation(this, R.anim.anim_fragment_up)
         binding.linerLogin.startAnimation(animationLiner)
-        val animationCardLogin=AnimationUtils.loadAnimation(this,R.anim.anim_floor)
+        val animationCardLogin=AnimationUtils.loadAnimation(this, R.anim.anim_floor)
         binding.cvLogin.startAnimation(animationCardLogin)
-        val imvAnimation2=AnimationUtils.loadAnimation(this,R.anim.anim_floor)
+        val imvAnimation2=AnimationUtils.loadAnimation(this, R.anim.anim_floor)
         binding.imV2.startAnimation(imvAnimation2)
 
         //Infla el fragmento para registrar cuenta
@@ -76,7 +76,7 @@ class LoginActivity : AppCompatActivity() {
 
     }//Fin del oncrete
     private fun singInAdmi(){
-        val i=Intent(this,LoginAdmiActivity::class.java)
+        val i=Intent(this, LoginAdmiActivity::class.java)
         startActivity(i)
         finish()
     }

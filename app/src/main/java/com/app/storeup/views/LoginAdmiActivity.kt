@@ -1,4 +1,4 @@
-package com.app.storeup
+package com.app.storeup.views
 
 import android.annotation.SuppressLint
 import android.content.Intent
@@ -11,10 +11,9 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
+import com.app.storeup.R
 import com.app.storeup.databinding.ActivityLoginAdmiBinding
 import com.app.storeup.viewmodels.LoginAdmiViewModel
-import com.app.storeup.views.HomeAdmiActivity2
-import com.app.storeup.views.RegisterAccountAdmiActivity
 
 class LoginAdmiActivity : AppCompatActivity() {
     private lateinit var binding: ActivityLoginAdmiBinding
@@ -58,7 +57,7 @@ class LoginAdmiActivity : AppCompatActivity() {
         })
     }
     private fun back(){
-        val i=Intent(this,LoginActivity::class.java)
+        val i=Intent(this, LoginActivity::class.java)
         startActivity(i)
         finish()
     }
@@ -69,7 +68,7 @@ class LoginAdmiActivity : AppCompatActivity() {
     }
     @Deprecated("Deprecated in Java")
     override fun onBackPressed() {
-        val i=Intent(this,LoginActivity::class.java)
+        val i=Intent(this, LoginActivity::class.java)
         startActivity(i)
         finish()
     }

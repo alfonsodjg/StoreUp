@@ -1,6 +1,8 @@
 package com.app.storeup.adapter
 
+import android.annotation.SuppressLint
 import android.content.Context
+import android.content.Intent
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.ImageView
@@ -9,6 +11,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.app.storeup.R
 import com.app.storeup.databinding.ItemTypeStoreBinding
 import com.app.storeup.model.entitys.CategoriasModel
+import com.app.storeup.views.FilterByTipoCategoriaActivity
 
 class TypeStoreAdapter(private val c: Context) : RecyclerView.Adapter<TypeStoreAdapter.ViewHolder>() {
     private var categorias: List<CategoriasModel> = emptyList()
@@ -17,6 +20,14 @@ class TypeStoreAdapter(private val c: Context) : RecyclerView.Adapter<TypeStoreA
         val iv: ImageView =binding.ivImageStore
         fun typeCategorias(categorias: CategoriasModel) {
             binding.tvTypeStore.text = categorias.tipo
+        }
+        init {
+            binding.root.setOnClickListener {
+                val selectedCategory = categorias[adapterPosition] //seleccionamos la posicion para enviarla a la otra activity
+                val i = Intent(c,FilterByTipoCategoriaActivity::class.java)
+                i.putExtra("tipoCategoria",selectedCategory.tipo)
+                c.startActivity(i)
+            }
         }
     }
 
@@ -63,6 +74,7 @@ class TypeStoreAdapter(private val c: Context) : RecyclerView.Adapter<TypeStoreA
         return categorias.size
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     fun setData(categorias: List<CategoriasModel>) {
         this.categorias = categorias
         notifyDataSetChanged()

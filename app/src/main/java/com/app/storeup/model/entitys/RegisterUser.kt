@@ -1,4 +1,4 @@
-package com.app.storeup.model
+package com.app.storeup.model.entitys
 
 data class RegisterUser(
     var id:Int,

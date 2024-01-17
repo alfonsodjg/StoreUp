@@ -11,7 +11,6 @@ import android.widget.Toast
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.get
-import com.app.storeup.LoginAdmiActivity
 import com.app.storeup.R
 import com.app.storeup.databinding.ActivityRegisterAccountAdmiBinding
 import com.app.storeup.viewmodels.ActivityCreateAccountAdmiViewModel
@@ -53,7 +52,7 @@ class RegisterAccountAdmiActivity : AppCompatActivity() {
         window.setBackgroundDrawable(background)
     }
     private fun back(){
-        val i=Intent(this,LoginAdmiActivity::class.java)
+        val i=Intent(this, LoginAdmiActivity::class.java)
         startActivity(i)
         finish()
     }
